@@ -29,3 +29,9 @@ Decision Tree = 0.81
 Random Forest = 0.84
 
 XGBOOST = 0.85
+
+Seleceted XGboost model and redeveloped with pipeline and virtual environment.
+
+Also deployed on local machine by app.py
+
+requirement.txt file attached
