@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deposit Prediction</title>
+</head>
+<body>
+    <h1>Deposit Prediction</h1>
+    <form action="/predict" method="post">
+        <!-- Dropdowns for categorical variables -->
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="age"><br>
+        
+        <label for="job">Job:</label>
+        <select id="job" name="job">
+            <option value="admin.">Admin</option>
+            <option value="blue-collar">Blue-collar</option>
+            <option value="technician">Technician</option>
+            <option value="services">Services</option>
+            <option value="management">Management</option>
+            <option value="retired">Retired</option>
+            <!-- Add other job options as needed -->
+        </select><br>
+        
+        <label for="marital">Marital Status:</label>
+        <select id="marital" name="marital">
+            <option value="married">Married</option>
+            <option value="single">Single</option>
+            <option value="divorced">Divorced</option>
+            <!-- Add other marital status options as needed -->
+        </select><br>
+        
+        <label for="education">Education:</label>
+        <select id="education" name="education">
+            <option value="primary">Primary</option>
+            <option value="secondary">Secondary</option>
+            <option value="tertiary">Tertiary</option>
+            <option value="unknown">Unknown</option>
+            <!-- Add other education options as needed -->
+        </select><br>
+        
+        <label for="default">Default:</label>
+        <select id="default" name="default">
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+        </select><br>
+
+        <label for="balance">Balance:</label>
+        <input type="text" id="balance" name="balance"><br>
+        
+        <label for="housing">Housing:</label>
+        <select id="housing" name="housing">
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+        </select><br>
+        
+        <label for="loan">Loan:</label>
+        <select id="loan" name="loan">
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+        </select><br>
+        
+        <label for="contact">Contact:</label>
+        <select id="contact" name="contact">
+            <option value="cellular">Cellular</option>
+            <option value="telephone">Telephone</option>
+            <option value="unknown">Unknown</option>
+            <!-- Add other contact options as needed -->
+        </select><br>
+
+        <label for="day">Day:</label>
+        <input type="text" id="day" name="day"><br>
+        
+        <label for="month">Month:</label>
+        <select id="month" name="month">
+            <option value="jan">January</option>
+            <option value="feb">February</option>
+            <option value="mar">March</option>
+            <option value="apr">April</option>
+            <option value="may">May</option>
+            <option value="jun">June</option>
+            <option value="jul">July</option>
+            <option value="aug">August</option>
+            <option value="sep">September</option>
+            <option value="oct">October</option>
+            <option value="nov">November</option>
+            <option value="dec">December</option>
+            <!-- Add other month options as needed -->
+        </select><br>
+
+        <label for="duration">Duration:</label>
+        <input type="text" id="duration" name="duration"><br>
+
+        <label for="campaign">Campaign:</label>
+        <input type="text" id="campaign" name="campaign"><br>
+
+        <label for="pdays">pdays:</label>
+        <input type="text" id="pdays" name="pdays"><br>
+
+        <label for="previous">Previous:</label>
+        <input type="text" id="previous" name="previous"><br>
+        
+        <label for="poutcome">Poutcome:</label>
+        <select id="poutcome" name="poutcome">
+            <option value="success">Success</option>
+            <option value="failure">Failure</option>
+            <option value="unknown">Unknown</option>
+            <option value="other">Other</option>
+            <!-- Add other poutcome options as needed -->
+        </select><br>
+        
+        <!-- Submit button -->
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- Display predictions if available -->
+    {% if result %}
+        <h2>Prediction:</h2>
+        <p>{{ result }}</p>
+    {% endif %}
+</body>
+</html>
